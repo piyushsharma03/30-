@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Document </title>
+</head>
+
+<body>
+    <h1> ARRAY CARDIO </h1>
+    <script>
+
+        const inventors = [
+            { first: "piyush", second: "sharma", year: 2000, passed: 2070 },
+            { first: "gourav", second: "kashyap", year:2001, passed: 2080 },
+            { first: "shivraj", second: "singh", year: 2001, passed: 2090 },
+            { first: "jack", second: "morn", year: 2010, passed: 2078 },
+            { first: "Anna", second: "silie", year: 2000, passed: 2060 },
+            { first: "john", second: "anderson", year: 2003, passed: 2056 },
+            { first: "july", second: "russel", year: 2000, passed: 2043 },
+        ];
+        
+        // inventors.forEach( inventor => console.log(inventor));
+    
+    //  ---------------------------------------------------------------------------------- 
+    
+        // Array.prototype.filter 
+        // 1. filter the inventors according to his year who was born in 2000 
+        
+        /*
+        const  order =  inventors.filter( function (inventor){
+            if(inventor.year == 2000){
+                return true;
+            }
+        });
+
+        console.table(order);
+
+        // or
+
+        const  order1 = inventors.filter( inventor => inventor.year == 2000 ? true : false)
+        console.table(order1);
+        */
+
+    //  ---------------------------------------------------------------------------------- 
+    
+    // Array.prototype.map 
+    //2.  Give an array of first and last name in the inventory . 
+    
+    const arr = inventors.map( ( a ) => a.first + a.second  );
+    //console.log(arr);
+    
+    // Array.prototype.sort
+    
+    const order =  inventors.sort( (last,next) => last.year > next.year ? -1 : 1 )
+    //console.table(order);
+    
+    //  ---------------------------------------------------------------------------------- 
+    //Array.protoype.reduce 
+     //3. how many year did all inventor lived ? 
+     
+      const lived = inventors.reduce((total,inventor) => {return total + (inventor.passed - inventor.year)});
+    //  console.log(lived);
+    
+    inventors.forEach( inventor => console.log( inventor.first + " lived "+(inventor.passed - inventor.year+" year")))
+
+
+    // Sort the inventor by year lived 
+    
+    const sortinvent = inventors.sort((a,b) => {
+        const afirst  =  a.passed  -  a.year ;
+        const bsecond  = b.passed - b.year ;
+        return  afirst > bsecond ? -1 : 1;
+    });
+
+  //  console.table(sortinvent);
+
+    </script>
+</body>
+
+</html>

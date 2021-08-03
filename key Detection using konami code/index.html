@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Key Detection </title>
+    <style>
+        body{
+        margin: 0px;
+        overflow: hidden;
+        background-color: #202020;
+            font-size: 10em;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+
+    .container {
+        border:2px solid black;
+        display:flex;
+        flex-wrap: wrap;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .showimage {
+        opacity : 1;
+    } 
+
+    span {
+        color: aliceblue;
+    }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container" >
+     <div class="image" style="border:2px solid black;width: fit-content;height:auto;opacity: 0;">
+        <img src="boom2.png" alt="boom image" class="image"> <span> 1 </span>
+     </div>   
+    </div>
+
+    <script>
+
+        const pressed = [];
+        const secretcode = "piyush";
+        var count  = 0;
+        const  img = document.querySelector(".image");
+        const text = document.querySelector("span");
+
+        window.addEventListener("keydown", (e) => {
+            pressed.push(e.key);
+
+            //Trimming the array from the backword .
+            pressed.splice(-secretcode.length,pressed.length - secretcode.length);
+
+            // Splice method is used to add or remove elements from the array . index is done from minus because
+            // here we are iterate from backward direction . 
+
+            // join method is used for converting element into strings . 
+
+            if( pressed.join("").includes(secretcode)) {
+        
+            img.style.opacity = "1";
+            count++;
+            text.innerHTML = count;
+            
+            //img.classList.add("showimage");
+            } 
+
+            console.log(pressed);
+
+        });   
+
+    </script>
+
+</body> 
+</html>
