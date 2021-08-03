@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Custom video player </title>
+    <style>
+        body {
+            margin: 0;
+            background-color: hsl(19, 9%, 54%);
+        }
+
+        .VideoContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .vid {
+            position: absolute;
+            width: 800px;
+            height: 453px;
+            box-shadow: 10px 10px 15px 5px rgb(80, 77, 77);
+        }
+
+        .controls {
+            Color: rgb(0, 0, 0);
+            background-color: rgb(46, 44, 44);
+            position: absolute;
+            border-radius: 5px;
+            z-index: 1;
+            margin-top: 31em;
+            width: 800px;
+            transition: all 0.2s;
+            height: 50px;
+        }   
+
+
+        .volandspeedcontrols {
+            display: flex;
+            color:white;
+            align-items: center;
+            margin-left: 6em;
+            width: fit-content;
+        }
+
+        input[ type=button] {
+            margin-left: 20px;
+        }
+
+
+        .progressbar {
+            background-color: chocolate;
+            border-radius: 5px;
+            flex-basis: 0;
+            height: 1rem;
+        }
+
+        .pb {
+            display:flex;
+            width:800px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="VideoContainer">
+        <video src="VID_20181026_141242.mp4" class="vid viewer "> </video>
+        
+        <div class="controls" id="control">
+            
+            <div class="pb" >
+                <div class="progressbar">
+                </div> 
+            </div>
+
+            <div class="volandspeedcontrols">
+                
+                <div style="width:3em;">
+                    <button class="playbutton" style="margin-left: 10px;margin-right: 20px;"> |> </button>
+                </div>
+                
+                Vol :
+                <input type="range" name="volume" min='0' max='100' value='30' class="volandspeed">
+                
+                Speed :
+                <input type="range" name="playbackRate" min='0' max='10' value='5' class="volandspeed">
+                
+                <input type="button" data-val="-5" value="<<5" class="skipbutton"> 
+                <input type="button" data-val="+5" value="5>>"  class="skipbutton">
+                
+            </div>
+        </div>
+    </div>
+        <script src="main.js"></script>
+    </body>
+    
+</html>

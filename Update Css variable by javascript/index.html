@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Updating css variable using javascript  </title>
+    <link rel="stylesheet" href="styel.css">
+</head>
+<body>
+        <div class="firstcontainer">
+        <h2> UPDATING CSS VARIABLES USING  <span class="h1"> JS </span> </h2>
+
+        <label for="spacing"  > SPACING : </label>
+        <input type="range" name="spacing" min="0" max="50" value="0" class="controls" data-sizing="px"   >
+        
+        <label for="blur" > BLUR : </label>
+        <input type="range" name="blur" min="0" max="50" value="0" class="controls" data-sizing="px">
+
+        <label for="Base" > Base : </label>
+        <input type="color" name="base" class="controls" value="#ff2342" >
+        <img src="tip3.jpg" alt="image">
+    </div>
+
+    <script>
+
+        const inputs = document.querySelectorAll("input");
+       
+        function handlecontrol(){
+            const suffix =  this.dataset.sizing || '';
+            document.documentElement.style.setProperty(`--${this.name}`,this.value + suffix);
+            //console.log(this.name);
+             }
+
+        inputs.forEach(input => input.addEventListener("change",handlecontrol));
+        inputs.forEach(input => input.addEventListener("mousemove",handlecontrol));
+        
+    </script >
+</body>
+</html>

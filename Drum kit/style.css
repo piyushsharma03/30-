@@ -1,0 +1,56 @@
+
+body{
+    margin:0px;
+    background-image: url("drum.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.keycontainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border:4px solid white;
+    width: auto;
+    height: auto;
+}   
+
+.key{
+    border:2px solid black;
+    text-align : center ;
+    width: 7rem;
+    height:  5rem;
+    margin : 1rem;
+    padding-top: 2rem;
+    box-shadow: 5px 5px rgba(0,0,0,0);
+    transition : all 1.0s;
+}
+
+.keycontainer :hover {
+    border:2px solid yellow;
+}
+
+.playing{
+    border:2px solid yellow;
+}
+
+kbd{
+    color:white;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.outerdiv{
+    display: flex;
+    border:2px solid white;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height:750px;
+}
+
+.sound {
+    color: yellow;
+    text-transform:uppercase;
+}

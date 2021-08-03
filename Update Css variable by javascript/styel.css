@@ -1,0 +1,41 @@
+body{
+    margin:0px;
+    background-image: url('clockbackground.jpg');
+    background-size: cover;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:white;
+}
+
+:root {
+    --blur:0px;
+    --spacing:0px;
+    --base:#ff2342;
+}
+
+.h1{
+    color:yellow;
+    font-weight: bolder;
+}
+
+.firstcontainer{
+    text-align: center;
+    border : 10px dashed white;
+    width: 50%;
+    height: 500px;
+    margin:2rem 20rem;
+    padding:3rem;
+}
+
+input {
+    margin: 1rem;
+    font-size: 10px;
+}
+
+img{
+  width: 50%;
+  height: 30%;
+  margin:5rem 7rem;
+  background-color:var(--base);
+  filter: blur(var(--blur));
+  padding:var(--spacing); 
+}
